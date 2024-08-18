@@ -2,6 +2,39 @@
 This will show which image is running ( it called as container )
 
 
+1. docker build .
+or if i want to give custom name to my image 
+docker build -t image_name .
+
+2. docker image ls
+This will give the list of all Docker Images
+
+3. docker stop image_Name
+This is used to stop the container running status
+
+4. docker run image_id
+This is used to run any docker image , But This will give error ( because localhoast can't able to access port where my application is running )
+
+
+To resolve this error, we need to use port binding
+
+This is Port Binding ( through which i can able to access port where my application is running )
+5. docker run -p container_port:application_port image_id
+
+But with this i can able to execute any other cmd on same terminal ( so , to fix this i use deteched method )
+6. docker run -d -p container_port:application_port image_id
+
+
+7. docker run -d --rm -p container_port:application_port image_id
+With this docker container will run on detached mode , but we don't need to remove manually ( with this --rm command . If i stop that particular docker container this will automatically remove from docker list )
+
+
+8. docker ps -a ( show all containers  )
+
+
+
+
+
 
 
 
